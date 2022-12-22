@@ -1,5 +1,6 @@
 plugins {
     id ("com.android.application")
+    id("com.google.dagger.hilt.android")
     kotlin("android")
     kotlin("kapt")
 }
@@ -58,4 +59,13 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.kotlin.coroutine.core)
     implementation(libs.kotlin.coroutine.android)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.google.hilt)
+    kapt(libs.google.hilt.compiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }
