@@ -27,6 +27,8 @@ dependencyResolutionManagement {
             val coroutine = "1.6.3"
             val room = "2.4.3"
             val hilt = "2.44"
+            val pager = "0.28.0"
+            val youtubedl = "a5c7ff837f"
 
             library("androidx-core", "androidx.core:core-ktx:$core")
             library("androidx-lifecycle-runtime","androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle")
@@ -42,6 +44,8 @@ dependencyResolutionManagement {
             library("androidx-room-compiler", "androidx.room:room-compiler:$room")
             library("google-hilt", "com.google.dagger:hilt-android:$hilt")
             library("google-hilt-compiler", "com.google.dagger:hilt-android-compiler:$hilt")
+            library("google-accompanist-pager", "com.google.accompanist:accompanist-pager:$pager")
+            library("youtube-dl", "com.github.yausername.youtubedl-android:library:$youtubedl")
         }
     }
 }

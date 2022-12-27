@@ -20,6 +20,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        ndk {
+            abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
+        }
     }
 
     buildTypes {
@@ -32,6 +36,16 @@ android {
         sourceCompatibility (JavaVersion.VERSION_1_8)
         targetCompatibility (JavaVersion.VERSION_1_8)
     }
+
+    splits {
+        abi {
+            isEnable = true
+            reset()
+            include("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
+            isUniversalApk = true
+        }
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -64,6 +78,8 @@ dependencies {
     kapt(libs.androidx.room.compiler)
     implementation(libs.google.hilt)
     kapt(libs.google.hilt.compiler)
+    implementation(libs.google.accompanist.pager)
+    implementation(libs.youtube.dl)
 }
 
 kapt {
